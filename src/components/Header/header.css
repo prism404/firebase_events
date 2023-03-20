@@ -75,4 +75,41 @@
 }
 .header .toggleNavbar:hover.icon {
   color: var(--SecondaryColor);
+}
+
+@media screen and (min-width: 769px) {
+  .toggleNavbar, .closeNavbar {
+    display: none;
+  }
+  .header {
+    padding: 1.5rem 2rem;
+  }
+  .header .navBar .navLists {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .header .navBar .navLists .navItem .linkNav {
+    color: var(--blackColor);
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .header .navBar .navLists .navItem .linkNav:hover {
+    color: #515751;
+  }
+  .header .navBar .navLists .btn {
+    margin-left: 1rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  .header .navBar .navLists .navItem {
+    padding: 0 0.7rem;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .header {
+    padding: 1rem 8.5rem;
+  }
 }/*# sourceMappingURL=header.css.map */

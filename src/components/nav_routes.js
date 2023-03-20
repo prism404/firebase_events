@@ -4,7 +4,7 @@ import React from "react";
 import EventDetailed from "../pages/EventDetailed";
 // import Home from "../pages/Home";
 import Home from "../components/Home/home";
-import Login from "../pages/Login";
+import Login from "../components/auth/Login";
 import Profil from "../pages/Profil";
 
 import { Routes, Route, useLocation } from "react-router-dom";

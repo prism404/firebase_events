@@ -22,9 +22,9 @@
   width: 100%;
   height: -moz-max-content;
   height: max-content;
-  padding: 8rem 1.5rem 3rem;
+  padding: 6.5rem 1.5rem 3rem;
   display: flex;
-  row-gap: 3rem;
+  row-gap: 2rem;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
@@ -95,4 +95,54 @@
 .home .homeContent .searchOptions .icon {
   font-size: 15px;
   background: var(--textColor);
+}
+
+@media screen and (min-width: 500px) {
+  .home .homeContent .homeTitle {
+    position: relative;
+    font-size: 2rem;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 1rem 0;
+  }
+  .home .cardDiv {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 660px) {
+  .home .homeContent .cardDiv {
+    padding: 2rem 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home .homeContent .input {
+    width: 220px;
+  }
+}
+@media screen and (min-width: 940px) {
+  .home {
+    height: 70vh;
+  }
+  .home .location {
+    width: 550px;
+  }
+  .home .date {
+    width: 250px;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .home {
+    height: 80vh;
+  }
+  .home .homeTitle {
+    padding-left: 2rem;
+  }
+  .home .location {
+    width: 550px;
+  }
+  .home .date {
+    width: 350px;
+  }
+  .home .cardDiv .searchOptions {
+    bottom: -1rem;
+  }
 }/*# sourceMappingURL=home.css.map */

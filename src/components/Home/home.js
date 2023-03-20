@@ -10,17 +10,17 @@ function Home() {
     <>
       <section className="home">
         <div className="homeContent container">
-          {/* <div className="textDiv">
+          <div className="textDiv">
 
-          <span className="smallText">Bored ?</span>
+          {/* <span className="smallText">Bored ?</span> */}
 
-          <h1 className="homeTitle">Find the event around you</h1>
-        </div> */}
+          <h1 className="homeTitle">Find the events around you</h1>
+        </div>
 
           <div className="cardDiv grid">
             <div className="destinationInput">
               <label htmlFor="lieu">Location</label>
-              <div className="input flex">
+              <div className="input location flex">
                 <input type="text" placeholder="Lieu, adresse ..." />
                 <FiMapPin className="icon" />
               </div>
@@ -28,7 +28,7 @@ function Home() {
 
             <div className="typeInput">
               <label htmlFor="date">Date</label>
-              <div className="input flex">
+              <div className="input date flex">
                 <input type="date" placeholder="Lieu, adresse ..." />
               </div>
             </div>

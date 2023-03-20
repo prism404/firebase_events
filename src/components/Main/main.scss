@@ -6,5 +6,93 @@
     --inputColor: rgba(239, 239, 239);
     --bodyColor: #c2c1a5;
     --textColor: #515751;
+    --textTitle : #36453b;
     --cardBG: rgb(255, 255, 255);
+}
+
+.main {
+    width: 100%;
+
+    .sectionEvent {
+        padding: 2.5rem 0;
+        .eventImg {
+            border-radius: 100%;
+        }
+
+        .title {
+            position: relative;
+            width: max-content;
+            color: var(--textTitle);
+            margin: 2rem 0;
+            z-index: 2;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .imgContainer {
+            height: 180px;
+            width: 100%;
+            overflow: hidden;
+            
+            img {
+                object-fit: cover;
+                transition: 2s ease;
+            }
+            &:hover {
+                img {
+                    transform: scale(1.08);
+                }
+            }
+        }
+    }
+
+    .contents {
+        justify-content: center;
+        gap: 1.2rem;
+        padding: 0.4rem;
+
+        .eventTitle {
+            height: 100%;
+            font-weight: 600;
+            font-size: 24px;
+            display: grid;
+            row-gap: 8px;
+            border-radius: 10px;
+            align-items: center;
+            overflow: hidden;
+            margin: 0.4rem;
+        }
+
+        .eventInfos {
+            padding: 1rem;
+        }
+
+        .eventDescription {
+            padding-bottom: 1.4rem;
+            font-size: 14px;
+        }
+
+        .eventDate {
+            color: var(--textTitle);
+        }
+    }
+
+    .eventCard {
+        border: 1px black solid;
+        margin: 1rem;
+        box-shadow: 0 2px 4px rgba(140, 140, 140, 0.5);
+    }
+
+    .icon {
+        color: var(--PrimaryColor);
+        font-size: 20px;
+        padding-right: 3px;
+    }
+
+    .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
 }
