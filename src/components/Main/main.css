@@ -1,0 +1,10 @@
+:root {
+  --PrimaryColor: rgb(43, 43, 43);
+  --SecondaryColor: rgb(133, 133, 133);
+  --gradientColor: linear-gradient(to right, rgba(230, 228, 228, 0.53), rgba(235, 245, 238));
+  --whiteColor: white;
+  --inputColor: rgba(239, 239, 239);
+  --bodyColor: #c2c1a5;
+  --textColor: #515751;
+  --cardBG: rgb(255, 255, 255);
+}/*# sourceMappingURL=main.css.map */

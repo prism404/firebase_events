@@ -1,20 +1,17 @@
-import './App.css';
-import {
-  Routes,
-  Route
-} from "react-router-dom";
-import Login from './pages/Login';
-import Home from './pages/Home';
-import Profil from './pages/Profil';
+import { BrowserRouter as Router } from "react-router-dom";
 
+// Components
+import Header from "./components/Header/header";
+import NavRoutes from "./components/nav_routes";
 
 function App() {
   return (
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profil" element={<Profil />} />
-      </Routes>
+    <>
+      <Router>
+        <Header />
+        <NavRoutes />
+      </Router>
+    </>
   );
 }
 

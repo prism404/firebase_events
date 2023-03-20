@@ -1,7 +1,13 @@
 import { auth, googleProvider } from "../config/firebase";
-import { createUserWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
 import { useState } from "react";
 import "../index.css";
+import "../assets/css/login.css";
+import login_event from "../assets/img/login_img.png";
 
 export const Auth = () => {
   const [email, setEmail] = useState("");
@@ -9,47 +15,59 @@ export const Auth = () => {
 
   const signIn = async () => {
     try {
-        await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password);
     } catch (err) {
-        console.error(err);
+      console.error(err);
     }
   };
 
   const signInWithGoogle = async () => {
     try {
-        await signInWithPopup(auth, googleProvider);
+      await signInWithPopup(auth, googleProvider);
     } catch (err) {
-        console.error(err);
+      console.error(err);
     }
   };
 
   const logOut = async () => {
     try {
-        await signOut(auth);
+      await signOut(auth);
     } catch (err) {
-        console.error(err);
-    };
+      console.error(err);
+    }
   };
 
   return (
     <div className="form_login">
-      <input
-        className="input_login"
-        type="text"
-        placeholder="Email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        className="input_login"
-        type="password"
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button className="other_btn" onClick={signIn}>Sign in</button>
+      <img src={login_event} alt="" className="img_event" />
+      <div className="input_section">
+        <input
+          className="input_login"
+          type="text"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          className="input_login"
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
 
-      <button className="other_btn" onClick={signInWithGoogle}>Sign in with Google</button>
+      <div className="btn_section">
+        <button className="btn" onClick={signIn}>
+          Sign in
+        </button>
 
-      <button className="delete_btn" onClick={logOut}>Logout</button>
+        <button className="btn" onClick={signInWithGoogle}>
+          Sign in with Google
+        </button>
+
+        <button className="btn" onClick={logOut}>
+          Logout
+        </button>
+      </div>
     </div>
   );
 };

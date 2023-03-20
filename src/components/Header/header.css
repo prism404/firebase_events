@@ -1,0 +1,78 @@
+:root {
+  --PrimaryColor: rgb(43, 43, 43);
+  --SecondaryColor: rgb(133, 133, 133);
+  --gradientColor: linear-gradient(to right, rgba(230, 228, 228, 0.53), rgba(235, 245, 238));
+  --blackColor: rgb(22, 22, 22);
+  --whiteColor: white;
+  --inputColor: rgba(239, 239, 239);
+  --bodyColor: #c2c1a5;
+  --textColor: #515751;
+  --cardBG: rgb(255, 255, 255);
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.6rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.24);
+}
+@media screen and (max-width: 768px) {
+  .header .navBar {
+    position: absolute;
+    height: -moz-max-content;
+    height: max-content;
+    width: 80%;
+    border-radius: 0.8rem;
+    top: -500rem;
+    left: 50%;
+    padding: 0.8rem;
+    transform: translate(-50%);
+    z-index: 2000;
+    box-shadow: 0 2px 4px rgba(42, 46, 46, 0.8);
+    transition: 0.5s ease-in-out;
+  }
+  .header .navBar .navLists {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    padding: 0.5rem 0;
+  }
+  .header .navBar .navLists .navItem {
+    padding: 0.5rem 0;
+  }
+  .header .navBar .navLists .navItem .linkNav {
+    color: var(--textColor);
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+  .header .navBar .navLists .navItem .linkNav:hover {
+    color: var(--PrimaryColor);
+  }
+  .header .navBar .navLists .activeNavbar {
+    top: 7rem;
+  }
+  .header .activeNavbar {
+    top: 7rem;
+  }
+  .header .closeNavbar {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--PrimaryColor);
+  }
+  .header .closeNavbar:hover {
+    color: var(--SecondaryColor);
+  }
+}
+.header .toggleNavbar .icon {
+  font-size: 25px;
+  color: var(--PrimaryColor);
+}
+.header .toggleNavbar:hover.icon {
+  color: var(--SecondaryColor);
+}/*# sourceMappingURL=header.css.map */
