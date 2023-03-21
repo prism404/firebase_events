@@ -1,0 +1,63 @@
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.searchBar .inputSearch {
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  background: var(--inputColor);
+}
+
+.inputSearch input {
+  color: black;
+  border: none;
+  display: flex;
+  padding: 1rem;
+}
+
+.inputSearch input:focus {
+  outline: none;
+}
+
+.input {
+  height: 40px;
+  padding: 0 1rem;
+  border-radius: 3rem;
+  background: var(--inputColor);
+  width: 250px;
+}
+.input input {
+  background: var(--inputColor);
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.input input::placerholder {
+  font-size: 13px;
+}
+.input .searchBtn {
+  cursor: pointer;
+}
+
+.searchBar ul li:hover {
+  background-color: rgb(141, 141, 141);
+  color: black;
+  cursor: pointer;
+}
+
+.autocompletion {
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1rem;
+  overflow: hidden;
+  position: absolute;
+  top: 3rem;
+}
+.autocompletion .autocomplete {
+  background: white;
+  color: black;
+  padding: 0.2rem;
+}/*# sourceMappingURL=search.css.map */

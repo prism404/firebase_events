@@ -1,0 +1,61 @@
+:root {
+    --PrimaryColor: rgb(43, 43, 43);
+    --SecondaryColor: rgb(133, 133, 133);
+    --gradientColor: linear-gradient(to right, rgba(230, 228, 228, 0.53), rgba(235, 245, 238));
+    --blackColor: rgb(22, 22, 22);
+    --whiteColor: white;
+    --inputColor: rgba(239, 239, 239);
+    --bodyColor: #c2c1a5;
+    --textColor: #515751;
+    --cardBG: rgb(255, 255, 255);
+}
+
+.organize {
+    padding: 9rem 2rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+
+    form {
+        background: none;
+    }
+
+    .update {
+        cursor: pointer;
+    }
+
+    .delete {
+        cursor: pointer;
+        color: rgb(150, 0, 0);
+    }
+
+    .inputSection {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 2rem;
+        input {
+            font-size: 1.2rem;
+            height: 40px;
+            border: none;
+            outline: none;
+            background: var(--inputColor);
+            padding: 0 1rem;
+            width: 350px;
+            &::placerholder {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .btnSection {
+        position: absolute;
+        left: 52%;
+        button {
+            margin: 0 0.6rem;
+        }
+    }
+}

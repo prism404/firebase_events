@@ -1,5 +1,5 @@
 import React from 'react';
-import { Auth } from "./auth.js";
+import { Auth } from "./auth";
 
 function Login() {
   return (

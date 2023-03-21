@@ -17,7 +17,11 @@
   padding: 2.5rem 0;
 }
 .main .sectionEvent .eventImg {
-  border-radius: 100%;
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main .sectionEvent .title {
   position: relative;
@@ -83,4 +87,13 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+}
+
+@media screen and (min-width: 500px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .title::after {
+    width: 155px !important;
+  }
 }/*# sourceMappingURL=main.css.map */

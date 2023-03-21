@@ -1,0 +1,61 @@
+:root {
+    --PrimaryColor: rgb(43, 43, 43);
+    --SecondaryColor: rgb(133, 133, 133);
+    --gradientColor: linear-gradient(to right, rgba(230, 228, 228, 0.53), rgba(235, 245, 238));
+    --blackColor: rgb(22, 22, 22);
+    --whiteColor: white;
+    --inputColor: rgba(239, 239, 239);
+    --bodyColor: #c2c1a5;
+    --textColor: #515751;
+    --cardBG: rgb(255, 255, 255);
+}
+
+.main_profil {
+    width: 100%;
+
+    .title_list {
+        font-size: 24px;
+        color: var(--textColor);
+    }
+
+    .outings_container {
+        position: absolute;
+        left: 4%;
+        top: 60%;
+        background: var(--cardBG);
+    }
+
+    .about_me {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 2rem 0;
+
+        .icon {
+            font-size: 20px;
+            cursor: pointer;
+            margin: 0 0.4rem;
+        }
+    }
+
+    th {
+        padding: 1.2rem 2rem;
+    }
+
+    td {
+        padding: 1.2rem 2rem; 
+    }
+
+    .actionIcon {
+        display: flex;
+        flex-direction: row;
+    }
+
+}
+
+@media screen and (min-width: 500px) {
+    .main_profil
+        {
+        padding: 9rem 2rem;
+        }
+}

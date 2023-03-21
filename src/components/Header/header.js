@@ -4,9 +4,14 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/img/logo.png";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
+import UseAuth from "../../context/UseAuth";
+import Default from "../../assets/img/default.png";
 
 function Header() {
   const [active, setActive] = useState("navBar");
+
+  const currentUser = UseAuth();
+  console.log('currentUser: ', currentUser);
 
   const showNav = () => {
     setActive("navBar activeNavbar");
@@ -27,22 +32,47 @@ function Header() {
 
         <div className={active}>
           <ul className="navLists flex">
+            
             <li className="navItem">
               <Link to={"/"} className="linkNav">
                 Home
               </Link>
             </li>
+
             <li className="navItem">
               <Link to={"/profil"} className="linkNav">
                 Profil
               </Link>
             </li>
+
+            <li className="navItem">
+              <Link to={"/create"} className="linkNav">
+                Organize
+              </Link>
+            </li>
+
             <li className="navItem">
               <Link to={"/login"} className="linkNav btn">
                 Login
               </Link>
             </li>
+            
+            <div className="avatarContainer">
+          {
+            currentUser !== 0 ? (
+              <img
+            src={currentUser?.photoURL}
+            alt="profileAvatar"
+            className="avatar"
+          />
+            ) : (
+              <img src={Default} alt="default profile" />
+            )
+          }
+          </div>
           </ul>
+
+          
 
           <div onClick={removeNav} className="closeNavbar">
             <AiFillCloseCircle className="icon" />

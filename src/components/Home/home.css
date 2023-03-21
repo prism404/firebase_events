@@ -131,7 +131,7 @@
 }
 @media screen and (min-width: 1240px) {
   .home {
-    height: 80vh;
+    height: 95vh;
   }
   .home .homeTitle {
     padding-left: 2rem;

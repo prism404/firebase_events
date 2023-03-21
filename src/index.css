@@ -36,6 +36,16 @@ input {
   background: var(--cardBG);
 }
 
+form {
+  background: var(--cardBG);
+}
+
+button {
+  outline: none;
+  background: none;
+  border: none;
+}
+
 .section {
   padding: 4rem 0 2 rem;
 }
@@ -88,3 +98,20 @@ input {
 }
 
 /* __________________________________________ */
+
+@media screen and (min-width: 1240px) {
+  .container {
+    width: 80% !important;
+    margin: auto !important;
+  }
+
+  .section {
+    padding: 6rem 0 4rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body {
+    zoom: 1.7;
+  }
+}

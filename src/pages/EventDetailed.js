@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+// import axios from "axios";
+// import { useParams } from "react-router-dom";
 
 function EventDetailed() {
+
   return (
-    <div>EventDetailed</div>
-  )
+    <div>
+      Event Detailed
+    </div>
+  );
 }
 
-export default EventDetailed
+export default EventDetailed;

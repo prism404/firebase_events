@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./home.css";
 // import Video from "../../assets/videos/bg_login.mp4";
-import { FiMapPin } from "react-icons/fi";
 import { GoSettings } from "react-icons/go";
 import Main from "../Main/main";
+import SearchBar from "../searchBar/search";
 
 function Home() {
   return (
@@ -17,13 +17,13 @@ function Home() {
           <h1 className="homeTitle">Find the events around you</h1>
         </div>
 
-          <div className="cardDiv grid">
+        
+        <div className="cardDiv grid">
             <div className="destinationInput">
-              <label htmlFor="lieu">Location</label>
-              <div className="input location flex">
-                <input type="text" placeholder="Lieu, adresse ..." />
-                <FiMapPin className="icon" />
-              </div>
+            <label htmlFor="date">Events</label>
+
+                <SearchBar />
+
             </div>
 
             <div className="typeInput">
@@ -33,12 +33,14 @@ function Home() {
               </div>
             </div>
           </div>
+        
 
           <div className="searchOptions flex">
             <GoSettings className="icon" />
             <span>More filters</span>
           </div>
         </div>
+        
       </section>
 
       <Main />
@@ -46,4 +48,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home

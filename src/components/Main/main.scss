@@ -16,7 +16,10 @@
     .sectionEvent {
         padding: 2.5rem 0;
         .eventImg {
-            border-radius: 100%;
+            position: relative;
+            width: 100%;
+            min-width: 100%;
+            object-fit: cover;
         }
 
         .title {
@@ -94,5 +97,14 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .title {
+        font-size: 1.5rem;
+        &::after {
+            width: 155px !important;
+        }
     }
 }

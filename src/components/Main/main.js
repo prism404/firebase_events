@@ -8,6 +8,7 @@ import { MdOutlineDateRange } from "react-icons/md";
 // import { BiCurrentLocation } from "react-icons/bi";
 import { FcNext } from "react-icons/fc";
 import { FcPrevious } from "react-icons/fc";
+// import EventDetailed from "../../pages/EventDetailed";
 
 function Main() {
   const [events, setEvents] = useState([]);
@@ -52,7 +53,7 @@ function Main() {
 
         <div className="pagination">
           <span onClick={prevHandler}>
-          <FcPrevious height={20} className="icon"/>
+            <FcPrevious height={20} className="icon" />
           </span>
           {pages.map((page) => (
             <span
@@ -64,7 +65,7 @@ function Main() {
             </span>
           ))}
           <span onClick={nextHandler}>
-            <FcNext height={20} className="icon"/>
+            <FcNext height={20} className="icon" />
           </span>
         </div>
 
@@ -75,10 +76,22 @@ function Main() {
             <div key={data.recordid} className="eventCard">
               {/* Return every single id from API */}
               <div className="contents grid">
+                 {/* Img de l'event */}
+                 <div className="imgContainer">
+                  <Link to={`event/${data.recordid}`}>
+                    <img
+                      src={data.fields.image}
+                      alt="event photodetailed"
+                      className="eventImg"
+                    />
+                  </Link>
+                </div>
                 <h3 className="eventTitle">{data.fields.title_fr}</h3>
 
                 <div className="eventInfos">
-                <p className="eventDescription">{data.fields.description_fr}</p>
+                  <p className="eventDescription">
+                    {data.fields.description_fr}
+                  </p>
                   <h4 className="eventDate">
                     <MdOutlineDateRange className="icon" />
                     {data.fields.daterange_fr}
@@ -94,26 +107,18 @@ function Main() {
                   </div>
                 </div>
 
-                {/* Img de l'event */}
-                <div className="imgContainer">
-                  <Link to={"event/:id"}>
-                    <img
-                      src={data.fields.image}
-                      alt="event photodetailed"
-                      className="eventImg"
-                    />
-                  </Link>
-                </div>
+               
               </div>
             </div>
           ))}
+          
         </div>
 
         {/* _______________ Pagination _______________ */}
 
         <div className="pagination">
           <span onClick={prevHandler}>
-          <FcPrevious height={20} className="icon"/>
+            <FcPrevious height={20} className="icon" />
           </span>
           {pages.map((page) => (
             <span
@@ -125,11 +130,10 @@ function Main() {
             </span>
           ))}
           <span onClick={nextHandler}>
-          <FcNext height={20} className="icon"/>
+            <FcNext height={20} className="icon" />
           </span>
         </div>
       </div>
-
     </section>
   );
 }

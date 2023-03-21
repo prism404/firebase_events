@@ -40,7 +40,7 @@
     justify-content: center;
     width: 100%;
     margin: auto;
-    padding: 0.5rem 0;
+    padding: 0.8em 0;
   }
   .header .navBar .navLists .navItem {
     padding: 0.5rem 0;
@@ -55,6 +55,11 @@
   }
   .header .navBar .navLists .activeNavbar {
     top: 7rem;
+  }
+  .header .navBar .navLists .avatarContainer img {
+    border-radius: 100%;
+    width: 60px;
+    padding: 1rem 1rem;
   }
   .header .activeNavbar {
     top: 7rem;
@@ -75,6 +80,11 @@
 }
 .header .toggleNavbar:hover.icon {
   color: var(--SecondaryColor);
+}
+.header .avatarContainer img {
+  border-radius: 100%;
+  width: 60px;
+  padding: 0.5rem 1rem;
 }
 
 @media screen and (min-width: 769px) {
