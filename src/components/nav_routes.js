@@ -1,15 +1,13 @@
 import React from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 // Pages
-import EventDetailed from "../pages/EventDetailed";
-// import Home from "../pages/Home";
+import EventDetailed from "../components/eventDetailed/EventDetailed";
 import Home from "../components/Home/home";
 import Login from "../components/auth/Login";
 import Profil from "../components/Profil/Profil";
 import Organize from "../components/Organize/CreateOuting";
 import SignUp from "./auth/Signup";
-
-import { Routes, Route, useLocation } from "react-router-dom";
 
 function NavRoutes() {
   const location = useLocation();

@@ -6,12 +6,14 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
 import UseAuth from "../../context/UseAuth";
 import Default from "../../assets/img/default.png";
+import { auth } from "../../config/firebase";
+import { signOut } from "firebase/auth";
 
 function Header() {
   const [active, setActive] = useState("navBar");
 
   const currentUser = UseAuth();
-  console.log('currentUser: ', currentUser);
+  console.log("currentUser: ", currentUser);
 
   const showNav = () => {
     setActive("navBar activeNavbar");
@@ -19,6 +21,15 @@ function Header() {
 
   const removeNav = () => {
     setActive("navBar");
+  };
+
+  const logOut = async () => {
+    try {
+      await signOut(auth);
+      alert("Bye bye ! See you again !");
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -32,7 +43,6 @@ function Header() {
 
         <div className={active}>
           <ul className="navLists flex">
-            
             <li className="navItem">
               <Link to={"/"} className="linkNav">
                 Home
@@ -51,28 +61,39 @@ function Header() {
               </Link>
             </li>
 
-            <li className="navItem">
+            {currentUser?.displayName ? (
+              <li>
+                <button className="btn" onClick={logOut}>
+                  {" "}
+                  Logout
+                </button>
+              </li>
+            ) : (
+              <li className="navItem">
+                <Link to={"/login"} className="linkNav btn">
+                  Login
+                </Link>
+              </li>
+            )}
+
+            {/* <li className="navItem">
               <Link to={"/login"} className="linkNav btn">
                 Login
               </Link>
-            </li>
-            
-            <div className="avatarContainer">
-          {
-            currentUser !== 0 ? (
-              <img
-            src={currentUser?.photoURL}
-            alt="profileAvatar"
-            className="avatar"
-          />
-            ) : (
-              <img src={Default} alt="default profile" />
-            )
-          }
-          </div>
-          </ul>
+            </li> */}
 
-          
+            <div className="avatarContainer">
+              {currentUser !== 0 ? (
+                <img
+                  src={currentUser?.photoURL}
+                  alt="profileAvatar"
+                  className="avatar"
+                />
+              ) : (
+                <img src={Default} alt="default profile" />
+              )}
+            </div>
+          </ul>
 
           <div onClick={removeNav} className="closeNavbar">
             <AiFillCloseCircle className="icon" />

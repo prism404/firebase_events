@@ -145,10 +145,6 @@
                 padding: 2rem 1rem;
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .input {
-                width: 220px;
-            }
         }
     }
 }
@@ -158,9 +154,6 @@
         height: 70vh;
         .location {
             width: 550px;
-        }
-        .date {
-            width: 250px;
         }
     }
 }

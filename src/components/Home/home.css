@@ -114,9 +114,6 @@
     padding: 2rem 1rem;
     grid-template-columns: repeat(2, 1fr);
   }
-  .home .homeContent .input {
-    width: 220px;
-  }
 }
 @media screen and (min-width: 940px) {
   .home {
@@ -124,9 +121,6 @@
   }
   .home .location {
     width: 550px;
-  }
-  .home .date {
-    width: 250px;
   }
 }
 @media screen and (min-width: 1240px) {

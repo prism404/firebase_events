@@ -5,7 +5,7 @@ import Default from "../../assets/img/default.png";
 import "./profil.css";
 import { HiPencilAlt } from "react-icons/hi";
 import { BsTrash3 } from "react-icons/bs";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { database } from "../../config/firebase";
 
 function ProfilPage() {
@@ -13,9 +13,27 @@ function ProfilPage() {
   console.table(outings);
   const currentUser = UseAuth();
 
-  const UpdateOuting = async (id) => {};
+  const UpdateOuting = async (id) => {
+    try {
+      const outingRef = doc(database, "sorties", id);
+      const temp = window.prompt('Please Re-enter the Outing title');
+      await updateDoc(outingRef, {title: temp})
+      getData();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  const DeleteOuting = async (id) => {};
+  const DeleteOuting = async (id) => {
+    try {
+      const outingRef = doc(database, "sorties", id);
+      await deleteDoc(outingRef);
+      getData();
+    } catch (error) {
+      console.log(error);
+    }
+
+  };
   const getData = async () => {
     try {
       const outingsRef = collection(database, "sorties");
@@ -86,11 +104,17 @@ function ProfilPage() {
                   <td>
                     <div className="actionIcon">
                       <div className="update">
-                        <HiPencilAlt className="icon" />
+                        <HiPencilAlt
+                          onClick={() => UpdateOuting(outing.id)}
+                          className="icon"
+                        />
                       </div>
 
                       <div className="delete">
-                        <BsTrash3 className="icon" />
+                        <BsTrash3
+                          onClick={() => DeleteOuting(outing.id)}
+                          className="icon"
+                        />
                       </div>
                     </div>
                   </td>
